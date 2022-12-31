@@ -19,7 +19,6 @@ typedef struct LNode
 
 Status InintList(LinkList &L)  
 { 
-   // 操作结果：构造一个空的线性表L 
    L = (LinkList)malloc(sizeof(LNode));
    L->next = NULL;
    return OK;
@@ -27,7 +26,6 @@ Status InintList(LinkList &L)
 
 Status DestroyList(LinkList &L) 
 {
-   // 初始条件：线性表L已存在。操作结果：销毁线性表L
    delete[] L;
    L->next = NULL;
    return OK;
@@ -35,7 +33,6 @@ Status DestroyList(LinkList &L)
 
 Status ClearList(LinkList L)
 {
-   // 初始条件：线性表L已存在。操作结果：将L重置为空表
    LNode *p = L->next,*q;
    while(p != NULL){
       q = p;
@@ -48,7 +45,6 @@ Status ClearList(LinkList L)
 
 Status ListEmpty(LinkList L)
 {
-   // 初始条件：线性表L已存在。操作结果：若L为空表，则返回TRUE，否则返回FALSE
    if(L->next == NULL)
       return TRUE;
    return FALSE;
@@ -56,7 +52,6 @@ Status ListEmpty(LinkList L)
 
 int ListLength(LinkList L)
 {
-   //初始条件：线性表L已存在。操作结果：返回L中数据元素个数 
    int len = 0;
    LNode *p = L->next;
    while(p != NULL){
@@ -68,7 +63,6 @@ int ListLength(LinkList L)
 
 Status GetElem(LinkList L,int i,ElemType &e)
 {
-   // L为带头结点的单链表的头指针。当第i个元素存在时,其值赋给e并返回OK,否则返回ERROR
    int len = ListLength(L);
    if(i < 1 || i > len)
       return ERROR;
@@ -109,9 +103,6 @@ Status comp(ElemType a,ElemType b)
 
 Status PriorElem(LinkList L,ElemType cur_e,ElemType &pre_e)
 {
-   // 初始条件: 线性表L已存在
-   // 操作结果: 若cur_e是L的数据元素,且不是第一个,则用pre_e返回它的前驱,
-   // 返回OK;否则操作失败,pre_e无定义,返回INFEASIBLE
    int pos = LocateElem(L,cur_e,comp);
    if(pos == 0 || pos == 1){
       pre_e = INFEASIBLE;

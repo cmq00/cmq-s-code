@@ -154,40 +154,40 @@ void CreateAdjListGraph(ALGraph &G)
     }
 }
 
-// void dfs(ALGraph G,VertexType u)
-// {
-//     cout << u << " ";
-//     vis[u] = 1;
-//     EdgeNode *p = G.adjlist[u].firstarc;
-//     while(p != NULL){
-//         int v = p->adjvex;
-//         if(!vis[v])
-//             dfs(G,v);
-//         p = p->nextarc; 
-//     }
-// }
+void dfs(ALGraph G,VertexType u)
+{
+    cout << u << " ";
+    vis[u] = 1;
+    EdgeNode *p = G.adjlist[u].firstarc;
+    while(p != NULL){
+        int v = p->adjvex;
+        if(!vis[v])
+            dfs(G,v);
+        p = p->nextarc; 
+    }
+}
 
-// void bfs(ALGraph G,int i)
-// {
-//     cout << G.adjlist[i].data;
-//     vis[i] = 1;
-//     EnQueue(Q,i);
-//     while(QueueEmpty(Q) == -1){
-//         int t;
-//         DeQueue(Q,t);
-//         EdgeNode *p = G.adjlist[t].firstarc;
-//         while(p != NULL){
-//             int j = p->adjvex;
-//             if(!vis[j]){
-//                 vis[j] = 1;
-//                 cout << " " << G.adjlist[j].data;
-//                 EnQueue(Q,j);
-//             }
-//             p = p->nextarc;
-//         }
-//     }
+void bfs(ALGraph G,int i)
+{
+    cout << G.adjlist[i].data;
+    vis[i] = 1;
+    EnQueue(Q,i);
+    while(QueueEmpty(Q) == -1){
+        int t;
+        DeQueue(Q,t);
+        EdgeNode *p = G.adjlist[t].firstarc;
+        while(p != NULL){
+            int j = p->adjvex;
+            if(!vis[j]){
+                vis[j] = 1;
+                cout << " " << G.adjlist[j].data;
+                EnQueue(Q,j);
+            }
+            p = p->nextarc;
+        }
+    }
 
-// }
+}
 
 void PrintAdjListGraph(ALGraph G)
 {

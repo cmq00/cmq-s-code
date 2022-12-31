@@ -166,47 +166,8 @@ int main()
 {
     char a[300];
     SString S,T,V;
-    puts("Replace操作:");
-    puts("输入S串:");
     scanf("%s",a);
     StrAssign(S,a);
-    puts("输入需要替换的串T:");
-    scanf("%s",a);
-    StrAssign(T,a);
-    puts("输入串V:");
-    scanf("%s",a);
-    StrAssign(V,a);
-    Replace(S,T,V);
-    puts("替换后:");
-    PrintStr(S);
-
-    ClearString(S);ClearString(T);ClearString(V);
-
-    puts("");
-    int pos,len;
-    puts("删除操作:");
-    puts("输入S串:");
-    scanf("%s",a);
-    StrAssign(S,a);
-    puts("输入删除的起始位置和长度:");
-    cin >> pos >> len;
-    StrDelete(S,pos,len);
-    puts("删除后:");
-    PrintStr(S);
-
-    ClearString(S);
-
-    puts("");
-    SString S1,S2;
-    puts("连接操作:");
-    puts("输入S1串:");
-    scanf("%s",a);
-    StrAssign(S1,a);
-    puts("输入S2串:");
-    scanf("%s",a);
-    StrAssign(S2,a);
-    Concat(T,S1,S2);
-    puts("连接后:");
-    PrintStr(T);
+    cout << int(S[0]);
 }
 

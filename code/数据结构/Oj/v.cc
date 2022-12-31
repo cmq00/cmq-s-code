@@ -49,9 +49,6 @@ int main()
     }
     id[3].start = j;
     id[3].key = a[n];
-    // cout << id[1].start << " " << id[1].key << endl;
-    // cout << id[2].start << " " << id[2].key << endl;
-    // cout << id[3].start << " " << id[3].key << endl;
     int pos = BlockSearch(key,a,n);
     cout << pos;
     return 0;

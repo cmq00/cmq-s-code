@@ -63,7 +63,7 @@ void SelectSort(Sqlist &L)
     int pos;
     for(int i = 1;i <= L.len;++i){
         int maxx = 0x3f3f3f;
-        for(int j = i;j <= L.len;++j){
+        for(int j = i;j <= L.len;++j){ 
             if(L.a[j] < maxx){
                 pos = j;
                 maxx = L.a[j];
